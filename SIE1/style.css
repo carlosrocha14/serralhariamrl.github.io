@@ -1,0 +1,453 @@
+/* Define reset de margens, preenchimento e modelo de caixa. */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define o estilo do corpo da página, incluindo a fonte padrão e a cor do texto. */
+body{
+    font-family: sans-serif;
+    color: #000;
+}
+
+/* Define estilos para links, âncoras e botões, incluindo peso da fonte, tamanho e cores. */
+li, a, button{
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Define estilos para o cabeçalho, incluindo posição fixa, alinhamento e plano de fundo. */
+header{
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100%;
+    height: 5em;
+    background-color: red;
+}
+
+/* Define estilos para o logotipo, incluindo margem superior, cursor, largura e altura. */
+.logo{
+    margin-top: 10px;
+    cursor: pointer;
+    width: 300px;
+    height: 45px;
+}
+
+/* Define estilos para a lista de navegação, incluindo tipo de lista, altura, desbordamento e margem direita. */
+.nav-links{
+    list-style: none;
+    overflow: hidden;
+}
+
+/* Define estilos para os itens de navegação na lista, incluindo exibição em linha e preenchimento. */
+.nav-links li{
+    display: inline-block;
+    padding: 2em;
+    height: 5em;
+}
+
+/* Define estilos para links de navegação, incluindo transição de cor no hover e tamanho da fonte. */
+.nav-links li a{
+    transition: all 0.3s ease 0s;  
+    font-size: 20px;
+}
+
+/* Define estilos para links de navegação no hover e links ativos, incluindo cor e fundo. */
+.nav-links li a:hover, a.active{
+    color: black;
+    background-color: #fff;
+    padding: 35px;
+}
+
+/* Define estilos para botões, incluindo preenchimento, borda, raio da borda, cursor, transição, cor de fundo e cor do texto. */
+button{
+    padding: 15px 26px;
+    border: none;
+    border-radius: 70px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+}
+
+/* Define estilos para botões no hover, alterando a cor de fundo e a cor do texto. */
+button:hover{
+    background-color: black;
+    color: white;
+}
+
+#check{
+    display: none;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 51px;
+    right: 10%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/* Define estilos para o quadro do slider, com overflow oculto e largura máxima de 100%. */
+.slider-frame {
+    overflow: hidden;
+    width: 100%; 
+    height: 100%;
+    display:list-item;
+}
+
+/* Define a animação de deslizamento com keyframes, ajustando a posição esquerda das imagens. */
+@keyframes slide_animation{
+    0% {left:0;}
+    10% {left:0;}
+    20% {left:-100%;}
+    30% {left:-100%;}
+    40% {left: -200%;}
+    50% {left: -200%;}
+    60% {left: -100%;}
+    70% {left: -100%;}
+    80% {left: -100%;}
+    90% {left: 0;}
+    100% {left:0;}
+}
+
+/* Define a animação de deslizamento para navegadores da Webkit (como Chrome ou Safari). */
+@-webkit-keyframes slide_animation{
+    0% {left:0;}
+    10% {left:0;}
+    20% {left:-100%;}
+    30% {left:-100%;}
+    40% {left: -200%;}
+    50% {left: -200%;}
+    60% {left: -100%;}
+    70% {left: -100%;}
+    80% {left: -100%;}
+    90% {left: 0;}
+    100% {left:0;}
+}
+
+/* Define estilos para o quadro de imagens no slider, incluindo largura, altura e posição relativa. */
+.slide-images {
+    width: 300%;
+    height: auto;
+    position: relative;
+    white-space: nowrap;
+    animation-name: slide_animation;
+    animation-duration: 27s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+/* Define estilos para os contêineres de imagens, incluindo altura, largura, flutuação e desbordamento oculto. */
+.img-container {
+    width: 33.33%;
+    float: left;
+    overflow: hidden;
+}
+
+/* Define estilos para imagens dentro dos contêineres, ajustando altura e largura para ocupar 100% do espaço. */
+.img-container img{
+    height: auto;
+    width: 100%;
+}
+
+/* Define estilos para o texto sobreposto nas imagens, incluindo altura, alinhamento de itens e plano de fundo. */
+.image-text {
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Define estilos para o título no texto sobreposto, ajustando o espaçamento acima, margem e tamanho da fonte. */
+.image-text h2 {
+    padding-top: 350px;
+    margin: 0;
+    font-size: 100px;
+}
+
+/* Define estilos para o parágrafo no texto sobreposto, ajustando margens e tamanho da fonte. */
+.image-text .paragrafo {
+    margin: 0;
+    padding-left:10%;
+    padding-right:10%;
+    font-size: 34px;
+}
+
+/* Define estilos gerais para a tabela, ajustando a largura, margem, borda, tamanho da fonte, espaçamento entre linhas e cor do texto. */
+.tabela table {
+    width: 80%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    border: 2px solid #333;
+    font-size: 18px;
+    line-height: 1.5;
+    color: black;
+}
+.intro-mini{
+    display: none;
+}
+/* Define estilos para parágrafos, incluindo largura, margem, tamanho da fonte, espaçamento entre linhas e cor do texto. */
+p {
+    width: 80%;
+    padding: 10px auto;
+    margin-left: 10%;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Define estilos para o título h1, incluindo largura, margem e cor do texto. */
+h1 {
+    width: 80%;
+    padding: 10px auto;
+    margin-left: 10%;
+    color: black;
+}
+
+/* Define estilos para cabeçalhos da tabela, incluindo cor de fundo, cor do texto, peso da fonte, preenchimento, alinhamento de texto e borda. */
+.tabela th {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border: 2px solid #555;
+    align-items: center;
+}
+
+/* Define estilos para células da tabela, incluindo cor do texto, preenchimento e borda. */
+.tabela td {
+    color: black;
+    padding: 10px;
+    border: 2px solid #555;
+    align-items: center;
+}
+
+/* Define estilos para linhas alternadas da tabela, ajustando a cor de fundo. */
+.tabela tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Define estilos para o catálogo de itens, incluindo layout flex, espaço em volta e largura. */
+.catalogue {
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-left:10%;
+    padding-right:10%;
+}
+
+/* Define estilos para os itens do catálogo, incluindo layout flex, margens superiores e inferiores, alinhamento, altura, largura, cor de fundo, desbordamento oculto e raio da borda. */
+.catalogue-item {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    justify-content: center;
+    height: 280px;
+    width: 400px;
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 2%;
+}
+
+/* Define estilos para a imagem no catálogo, ajustando largura, altura, posição de plano de fundo e tamanho da imagem. */
+.div-image {
+    width: 400px;
+    height: 280px;
+    background-position: center center;
+    background-size: cover;
+    display:flex;
+}
+
+/* Define estilos para o elemento de descrição no catálogo, incluindo posição absoluta, cor de fundo, margem superior, largura, layout flex, alinhamento de conteúdo e transformação de translação. */
+.description-element {
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.6);
+    margin-top: 210px;
+    width: 400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    transform: translateY(100%);
+    opacity: 0; /* Inicialmente oculto */
+}
+
+/* Define estilos para a imagem dentro do elemento de descrição, ajustando altura e largura. */
+.description-element img{
+    height: 16px;
+    width: 16px;
+}
+
+/* Define estilos para itens de catálogo no hover, incluindo efeito de escala e transições. */
+.catalogue-item:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+
+/* Define estilos para o elemento de descrição no hover, incluindo translação e opacidade. */
+.catalogue-item:hover .description-element {
+    transform: translateY(0);
+    opacity: 1; /* Torna o texto visível no hover */
+    transition: transform 0.5s;
+}
+
+/* Define estilos para o elemento de descrição quando não está no hover, ajustando a opacidade para ocultar. */
+.catalogue-item:not(:hover) .description-element {
+    opacity: 0;
+}
+
+/* Define estilos para o cabeçalho h4, incluindo tamanho da fonte e cor do texto. */
+h4{
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Define estilos para o contêiner, incluindo margem, exibição flex e alinhamento de itens. */
+.container {
+    margin: 25px 10%;
+    display: flex;
+    align-items: center;
+    height: 450px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+/* Define estilos para a imagem no contêiner, ajustando largura e altura. */
+.image{
+    width: 45%;
+}
+
+/* Define estilos para a seção de informações, incluindo largura. */
+.info{
+    width: 55%;
+}
+
+/* Define estilos para tabelas na seção de informações, ajustando a largura, tamanho da fonte e espaçamento de células. */
+.info table {
+    width: 100%;
+}
+
+/* Define estilos para células de tabela na seção de informações, ajustando preenchimento e alinhamento de texto. */
+.info table td {
+    padding: 5px 10px;
+}
+
+/* Define estilos para a primeira coluna de células de tabela na seção de informações, ajustando o alinhamento de texto e o peso da fonte. */
+.info table tr td:first-child {
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Define estilos para a última coluna de células de tabela na seção de informações, ajustando o alinhamento de texto à direita. */
+.info table tr td:last-child {
+    text-align: right;
+}
+
+/* Define estilos para o botão do relatório, incluindo layout flex e alinhamento de itens, bem como margem. */
+.butaorelatorio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 70px;
+}
+
+/* Define estilos para o botão do relatório e seu hover, ajustando cor de fundo e cor do texto. */
+.butaorelatorio button{
+    background-color: black;
+    color: #fff;
+    width: 470px;
+}
+
+.butaorelatorio button:hover{
+    background-color: red;
+    color: #fff;
+    width: 470px;
+}
+
+/* Define estilos para o rodapé, incluindo alinhamento de texto e cor de fundo. */
+footer {
+    text-align: center;
+    background-color: red;
+    padding: 10px;
+}
+
+/* Define estilos para o texto no rodapé, incluindo cor do texto. */
+footer p{
+    color: white;
+}
+
+@media(max-width: 1400px){
+    .toggle-button{
+        display: flex;
+    }
+    .slider-frame {
+        top: 5em;
+    }
+    .nav-links{
+        width: 100% ;
+        background-color: red;
+        text-align: center;
+    }
+    nav{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links li{
+        display: block;
+    }
+
+    .download button{
+       display: none; 
+    }
+    #check:checked ~ nav{
+        display: flex;
+    }
+    .image-text {
+        display: none;
+    }
+    .intro-mini{
+        display:contents;
+        align-items: center;
+    }
+    .slider-frame{
+        height: auto;
+    }
+}
+
+
+
+
+
+
+
